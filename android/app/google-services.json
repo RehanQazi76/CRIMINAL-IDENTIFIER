@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "407821126543",
+    "project_id": "criminalfacedetection",
+    "storage_bucket": "criminalfacedetection.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407821126543:android:dfb8fba4cb19ea0bf859fa",
+        "android_client_info": {
+          "package_name": "EDIGRP7.vit.criminal_identifier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "407821126543-dbalprro5nl13n4n4a5dgt4k60226vgd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "EDIGRP7.vit.criminal_identifier",
+            "certificate_hash": "d4dda78827530d65e6b2852a46194809330a3ee1"
+          }
+        },
+        {
+          "client_id": "407821126543-1blmgjb0ljca5e9c2gpgjf4fahsg7hhr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6ply5diq-6FrKK53Me39XySMa9c-h0pQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "407821126543-1blmgjb0ljca5e9c2gpgjf4fahsg7hhr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
