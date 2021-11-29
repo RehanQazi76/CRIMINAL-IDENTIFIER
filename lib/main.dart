@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'LoginPage.dart';
+import 'screens/LoginPage.dart';
 import 'package:firebase_core/firebase_core.dart';
 Future main () async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
     title: 'Navigation Basics',
     home: Home(),));
 }
@@ -17,12 +18,15 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('welcome '),
+        title: const Text('               welcome '),
       ),
       body: Center(
         child:Container(
           child:Column(
             children: <Widget>[
+              TextFormField(
+
+              ),
               Container(
                 child:const Image(image: AssetImage("images/pic1.jpg"),),
               ),

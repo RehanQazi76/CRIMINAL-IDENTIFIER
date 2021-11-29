@@ -3,8 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:criminal_identifier/main.dart';
-import 'package:criminal_identifier/registration_screen.dart';
-import 'package:criminal_identifier/upload.dart';
+import 'package:criminal_identifier/screens/registration_screen.dart';
+import 'package:criminal_identifier/screens/upload.dart';
 class LoginP extends StatefulWidget {
   @override
   _State createState() => _State();
@@ -80,12 +80,13 @@ class _State extends State<LoginP> {
     final loginButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
-      color: Colors.redAccent,
+      color: Colors.blueAccent,
       child: MaterialButton(
           padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () {
             signIn(emailController.text, passwordController.text);
+            
           },
           child: Text(
             "Login",
@@ -112,7 +113,7 @@ class _State extends State<LoginP> {
                     SizedBox(
                         height: 200,
                         child: Image.asset(
-                          "images/pic1.jpg",
+                          "images/loginpic.png",
                           fit: BoxFit.contain,
                         )),
                     SizedBox(height: 45),
@@ -138,7 +139,7 @@ class _State extends State<LoginP> {
                             child: Text(
                               "SignUp",
                               style: TextStyle(
-                                  color: Colors.redAccent,
+                                  color: Colors.blueAccent,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15),
                             ),
