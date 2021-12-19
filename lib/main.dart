@@ -27,9 +27,9 @@ class Home extends StatelessWidget {
               TextFormField(
 
               ),
-              Container(
-                child:const Image(image: AssetImage("images/pic1.jpg"),),
-              ),
+              const SizedBox(height:30 , width: 20,),
+                 const Image(image: AssetImage("images/pic1.jpg"),),
+              
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: CupertinoColors.black,

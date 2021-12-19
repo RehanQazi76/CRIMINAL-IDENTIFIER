@@ -173,7 +173,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () {
             signUp(emailEditingController.text, passwordEditingController.text);
-            screen();
+             Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const screen()),
+                  );
+            
           },
           child: Text(
             "SignUp",

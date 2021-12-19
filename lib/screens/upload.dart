@@ -11,6 +11,9 @@ class screen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('welcome '),
+         actions: <Widget>[
+          ElevatedButton.icon(onPressed: (){}, icon: Icon(Icons.person), label: Text("Logout"))
+        ],
       ),
       body: Center(
         child: Container(

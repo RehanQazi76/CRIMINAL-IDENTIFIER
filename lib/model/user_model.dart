@@ -1,3 +1,4 @@
+import 'package:criminal_identifier/services/database.dart';
 class UserModel {
   String? uid;
   String? email;
