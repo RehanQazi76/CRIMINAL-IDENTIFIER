@@ -15,7 +15,7 @@ class display extends StatefulWidget {
 class _displayState extends State<display> {
   TextEditingController Uid = TextEditingController();
   bool isClicked = false;
-   var db = FirebaseFirestore.instance.collection("user");
+  var db = FirebaseFirestore.instance.collection("user");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,32 +62,55 @@ class _displayState extends State<display> {
                   }),
             ),
           ),
-          isClicked? StreamBuilder<QuerySnapshot>(
-        stream: db.where("Uid", isEqualTo: Uid.text).snapshots(),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          } else {
-            return SingleChildScrollView(
-              child: ListView(
-                children: snapshot.data!.docs.map((doc) {
-                  return ListView(
-                    children: [
-                      Text(doc.data()['name']),
-                      Text(doc.data()['DateOfBirth']),
-                      Text(doc.data()['crime']),
-                      Text(doc.data()['criminalHistory']),
-                    ],
-                  );
-                }).toList(),
-              ),
-            );
-          }
-        },
-      )
-    :Container()
+          isClicked
+              ? StreamBuilder<QuerySnapshot>(
+                  stream: db.where("Uid", isEqualTo: Uid.text).snapshots(),
+                  builder: (context, snapshot) {
+                    if (!snapshot.hasData) {
+                      print("ssss1 ${snapshot.hasData}");
+                      return Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    } else {
+                      print("sss ${snapshot.hasData}");
+                      return ListView(
+                        shrinkWrap: true,
+                        children: snapshot.data!.docs.map((doc) {
+                          return Column(
+                            children: [
+                              Padding(padding: const EdgeInsets.all( 8),
+                              child: Text(doc.data()['name'],
+                              style: const TextStyle( fontSize: 15.0,
+                                fontStyle:FontStyle.italic),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(doc.data()['DateOfBirth'],
+                                style: const TextStyle( fontSize: 15.0,
+                                fontStyle:FontStyle.italic),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(doc.data()['crime'],
+                                style: const TextStyle( fontSize: 15.0,
+                                fontStyle:FontStyle.italic),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(doc.data()['criminalHistory'],
+                                style: const TextStyle( fontSize: 15.0,
+                                fontStyle:FontStyle.italic),),
+                              ),
+                            ],
+                          );
+                        }).toList(),
+                      );
+                    }
+                  },
+                )
+              : Container(
+                  child: Text("panga hai"),
+                )
         ]));
   }
 }

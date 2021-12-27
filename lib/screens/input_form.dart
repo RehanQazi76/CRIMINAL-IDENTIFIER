@@ -116,27 +116,7 @@ class _State extends State<InputForm> {
                     }),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: 10,
-                bottom: 15,
-              ),
-              child: Center(
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: CupertinoColors.black,
-                      onPrimary: CupertinoColors.white,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 40, vertical: 20),
-                    ),
-                    child: const Text('View data '),
-                    onPressed: () {
-                      Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => display(),));
-                    }),
-              ),
-            ),
+           
           ],
         ));
   }
