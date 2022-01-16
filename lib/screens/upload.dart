@@ -1,8 +1,8 @@
 import 'package:criminal_identifier/screens/display.dart';
+import 'package:criminal_identifier/screens/imgupload.dart';
 import 'package:criminal_identifier/screens/input_form.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:criminal_identifier/main.dart';
 
 class screen extends StatelessWidget {
   const screen({Key? key}) : super(key: key);
@@ -74,7 +74,7 @@ class screen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => InputForm()),
+                    MaterialPageRoute(builder: (context) => imgipt()),
                   );
                 },
               ),)
