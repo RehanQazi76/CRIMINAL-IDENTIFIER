@@ -1,10 +1,12 @@
+import 'package:criminal_identifier/screens/search.dart';
+import 'package:criminal_identifier/screens/registration_screen.dart';
+import 'package:criminal_identifier/screens/upload.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:criminal_identifier/main.dart';
-import 'package:criminal_identifier/screens/registration_screen.dart';
-import 'package:criminal_identifier/screens/upload.dart';
+
 class LoginP extends StatefulWidget {
   @override
   _State createState() => _State();
@@ -80,13 +82,12 @@ class _State extends State<LoginP> {
     final loginButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
-      color: Colors.blueAccent,
+      color: Colors.redAccent,
       child: MaterialButton(
           padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () {
             signIn(emailController.text, passwordController.text);
-            
           },
           child: Text(
             "Login",
@@ -139,7 +140,7 @@ class _State extends State<LoginP> {
                             child: Text(
                               "SignUp",
                               style: TextStyle(
-                                  color: Colors.blueAccent,
+                                  color: Colors.redAccent,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15),
                             ),
@@ -196,4 +197,3 @@ class _State extends State<LoginP> {
     }
   }
 }
-

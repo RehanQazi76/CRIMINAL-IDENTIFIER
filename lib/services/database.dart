@@ -7,7 +7,7 @@ class FireBaseServices {
   var db = FirebaseFirestore.instance.collection("user");
 
   Future<void> addUser(
-      String Uid, String name, String DoB, String crime, String CHistory) {
+      String Uid, String name, String DoB, String crime, String CHistory ,String image) {
     // Call the user's CollectionReference to add a new user
     return db
         .add({
@@ -16,6 +16,7 @@ class FireBaseServices {
           "DateOfBirth": DoB,
           "crime": crime,
           "criminalHistory": CHistory,
+          "image": image,
         })
         .then((value) => print("User Added"))
         .catchError((error) => print("Failed to add user: $error"));

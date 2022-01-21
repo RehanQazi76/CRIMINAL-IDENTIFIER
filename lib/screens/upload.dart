@@ -1,5 +1,5 @@
-import 'package:criminal_identifier/screens/display.dart';
-import 'package:criminal_identifier/screens/imgupload.dart';
+import 'package:criminal_identifier/screens/search.dart';
+import 'package:criminal_identifier/screens/imagedisplay.dart';
 import 'package:criminal_identifier/screens/input_form.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -23,27 +23,7 @@ class screen extends StatelessWidget {
           child: Column(
             children: <Widget>[
              Padding(padding: EdgeInsets.fromLTRB(0, 30, 0, 0),),
-              RichText(
-                  textAlign: TextAlign.center,
-                  
-                text: const TextSpan(
-                  text: 'Here  ',
-                  style: 
-                  TextStyle(
-                    decoration: TextDecoration.none,
-                    fontSize: 40,
-                  ), 
-                  children: <TextSpan>[
-                    TextSpan(
-                        text: 'we end and will begin with ML ',
-                        style: TextStyle(
-                          fontFamily: "ComforterBrush-Regular",
-                            fontWeight: FontWeight.normal,
-                            fontSize: 50,
-                            color: Colors.lightBlue)),
-                  ],
-                ),
-              ),
+      
               Center(
                 child:Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -62,7 +42,8 @@ class screen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => InputForm()),
                   );
                 },
-              ),),
+              ),
+              ),
               Container(width: 8.0,),
                Expanded(child:  ElevatedButton(
                 style: ElevatedButton.styleFrom(
