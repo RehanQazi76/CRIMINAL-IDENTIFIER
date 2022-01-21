@@ -1,4 +1,5 @@
 import 'package:criminal_identifier/services/database.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 class UserModel {
   String? uid;
   String? email;
@@ -26,4 +27,16 @@ class UserModel {
       'secondName': secondName,
     };
   }
+}
+class AuthService {
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+
+  // sign out
+Future<void> signOut() async {
+    await _auth.signOut();
+    
+  }
+
 }

@@ -27,13 +27,19 @@ class _inputState extends State<imgipt> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('display img '),
-        actions: <Widget>[
-          ElevatedButton.icon(
-              onPressed: () {},
-              icon: const Icon(Icons.person),
-              label: const Text("logout"))
-        ],
+        title: Text.rich(
+          TextSpan(
+            text: "DISPLAY IMAGES",
+            style: TextStyle(
+                          fontFamily: "MavenPro-Bold",
+                            fontWeight: FontWeight.normal,
+                            fontSize: 20,
+                            color: Colors.white)  
+            
+          ),
+          
+        ),
+       
       ),
       body: StreamBuilder<QuerySnapshot>(
           stream: db.snapshots(),
@@ -57,10 +63,14 @@ class _inputState extends State<imgipt> {
                             MaterialPageRoute(builder: (context) => datadisplay(doc['Uid'])),
                           );
                         },
-                        child: Image.network(
-                          doc['image'],
-                          height: 300.0,
-                          width: 400.0,
+                        child: Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Image.network(
+                            doc['image'],
+                            
+                            height: 300.0,
+                            width: 400.0,
+                          ),
                         ),
                       );
                     },

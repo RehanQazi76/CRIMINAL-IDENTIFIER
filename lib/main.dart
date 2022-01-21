@@ -1,53 +1,94 @@
+import 'package:criminal_identifier/screens/upload.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'screens/LoginPage.dart';
 import 'package:firebase_core/firebase_core.dart';
-Future main () async{
+import 'package:firebase_auth/firebase_auth.dart';
+
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     title: 'Navigation Basics',
-    home: Home(),));
+    home: Home(),
+  ));
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('               welcome '),
+        title: Center(child: Text('welcome')),
+        automaticallyImplyLeading: false,
       ),
       body: Center(
-        child:Container(
-          child:Column(
+        child: Container(
+          child: Column(
             children: <Widget>[
-              TextFormField(
-
-              ),
-              const SizedBox(height:30 , width: 20,),
-                 const Image(image: AssetImage("images/pic1.jpg"),),
               
+              const SizedBox(
+                height: 30,
+                width: 20,
+              ),
+              const Image(
+                image: AssetImage("images/detectivep.png"),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text.rich(
+          TextSpan(
+            text: " CRIMINAL IDENTIFIER ",
+            style: TextStyle( 
+                            fontFamily: "MavenPro-Bold",
+                              fontWeight: FontWeight.normal,
+                              fontSize: 25,
+                              color: Colors.black)  
+            
+          ),
+          
+        ),
+              ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: CupertinoColors.black,
+                  primary: Colors.blue,
                   onPrimary: CupertinoColors.white,
+                  fixedSize:Size(180.0, 80.0),
                 ),
-                child: const Text('Login'),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginP()),
-                  );
+                child:  Text('Get started ',
+                style: TextStyle(fontSize: 25.0,
+                fontFamily: "MavenPro-Bold"),),
+                onPressed: () async {
+                  _auth.authStateChanges().listen((user) {
+                    if (user == null) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginP()),
+                      );
+                      print(' error');
+                    } else {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => screen()));
+                      print(user);
+                    }
+                  });
                 },
               ),
             ],
           ),
         ),
       ),
-
     );
   }
 }

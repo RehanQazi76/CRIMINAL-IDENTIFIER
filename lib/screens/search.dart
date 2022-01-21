@@ -20,13 +20,19 @@ class _displayState extends State<display> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('welcome '),
-          actions: <Widget>[
-            ElevatedButton.icon(
-                onPressed: () {},
-                icon: Icon(Icons.person),
-                label: Text("logout"))
-          ],
+          title: Text.rich(
+          TextSpan(
+            text: "SEARCH DATA",
+            style: TextStyle(
+                          fontFamily: "MavenPro-Bold",
+                            fontWeight: FontWeight.normal,
+                            fontSize: 20,
+                            color: Colors.white)  
+            
+          ),
+          
+        ),
+          
         ),
         body: ListView(children: [
           Padding(
@@ -49,12 +55,13 @@ class _displayState extends State<display> {
             child: Center(
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: CupertinoColors.black,
+                    primary: Colors.blue[600],
                     onPrimary: CupertinoColors.white,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 40, vertical: 20),
                   ),
-                  child: const Text('search '),
+                  child: const Text('SEARCH',
+                  style: TextStyle(fontSize: 15.0),),
                   onPressed: () {
                     setState(() {
                       isClicked = true;
@@ -91,7 +98,7 @@ class _displayState extends State<display> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.all(8),
+                                  padding: const EdgeInsets.all(3.0),
                                   child: Text(
                                     doc.data()['name'],
                                     style: const TextStyle(
@@ -100,7 +107,7 @@ class _displayState extends State<display> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(3.0),
                                   child: Text(
                                     doc.data()['DateOfBirth'],
                                     style: const TextStyle(
@@ -109,7 +116,7 @@ class _displayState extends State<display> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(3.0),
                                   child: Text(
                                     doc.data()['crime'],
                                     style: const TextStyle(
@@ -118,7 +125,7 @@ class _displayState extends State<display> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(3.0),
                                   child: Text(
                                     doc.data()['criminalHistory'],
                                     style: const TextStyle(
@@ -135,7 +142,7 @@ class _displayState extends State<display> {
                   },
                 )
               : Container(
-                  child: Text("panga hai"),
+                  child: Spacer()
                 )
         ]));
   }

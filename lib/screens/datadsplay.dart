@@ -29,12 +29,7 @@ class _datadisplayState extends State<datadisplay> {
     return Scaffold(
       appBar:AppBar(
           title: const Text('welcome '),
-          actions: <Widget>[
-            ElevatedButton.icon(
-                onPressed: () {},
-                icon: Icon(Icons.person),
-                label: Text("logout"))
-          ],
+          
         ),
         body:
       StreamBuilder<QuerySnapshot>(

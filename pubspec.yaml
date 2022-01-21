@@ -60,6 +60,10 @@ flutter:
     - images/pic1.jpg
     - images/regpic.png
     - images/loginpic.png
+    - images/detective-icon.jpg
+    - images/detectivep.png
+    - images/insert.png
+    - images/compare.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -74,7 +78,7 @@ flutter:
     - family: ComforterBrush-Regular
       fonts:
         - asset: fonts/ComforterBrush-Regular.ttf
-          style: italic
+        - asset: fonts/MavenPro-Bold.ttf
     # - family: Trajan Pro
     #   fonts:
     #     - asset: fonts/TrajanPro.ttf

@@ -27,29 +27,35 @@ class _State extends State<InputForm> {
   TextEditingController CHistory = TextEditingController();
   TextEditingController image = TextEditingController();
   String? url;
+  void rest() {
+    name.text = '';
+    Uid.text = '';
+    DoB.text = '';
+    crime.text = '';
+    CHistory.text = '';
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('welcome '),
-          actions: <Widget>[
-            ElevatedButton.icon(
-                onPressed: () {},
-                icon: Icon(Icons.person),
-                label: Text("logout"))
-          ],
+          title:  Center(child: Text('INSERT DATA ')),
         ),
         body: ListView(
           children: [
+            Image.network('https://static.thenounproject.com/png/348334-200.png',
+                      height: 130,
+                      width: 150,),
             Padding(
               padding: EdgeInsets.only(
                 top: 10,
                 bottom: 15,
               ),
+
               child: Center(
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: CupertinoColors.black,
+                    primary: Colors.blue[600],
                     onPrimary: CupertinoColors.white,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 20),
@@ -116,6 +122,7 @@ class _State extends State<InputForm> {
               child: TextFormField(
                 keyboardType: TextInputType.datetime,
                 controller: DoB,
+                
                 decoration: InputDecoration(
                     labelText: 'Date of Birth ',
                     hintText: 'DD/MM/YYYY',
@@ -156,7 +163,7 @@ class _State extends State<InputForm> {
               child: Center(
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: CupertinoColors.black,
+                      primary: Colors.blue,
                       onPrimary: CupertinoColors.white,
                       padding: const EdgeInsets.symmetric(
                           horizontal: 40, vertical: 20),
@@ -166,6 +173,7 @@ class _State extends State<InputForm> {
                       Fluttertoast.showToast(msg: "Data Sucsessfully added");
                       FireBaseServices().addUser(Uid.text, name.text, DoB.text,
                           crime.text, CHistory.text, url.toString());
+                      rest();
                     }),
               ),
             ),

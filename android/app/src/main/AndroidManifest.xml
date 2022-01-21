@@ -39,5 +39,5 @@
             android:value="2" />
 
     </application>
-    <user-permission android:main="andriod.permission.INTERNET"/>
+   
 </manifest>
